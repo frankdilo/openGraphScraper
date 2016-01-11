@@ -244,6 +244,11 @@ exports.getOG = function(options, callback) {
 				});
 			});
 
+			// if no title found in og tags, get the title of the page
+			if (!ogObject['ogTitle']) {
+				ogObject['ogTitle'] = $('head>title').text();
+			}
+
 			/* Combine image/width/height/type
 				and sort for priority */
 			var ogImages = _.zip(ogObject.ogImage,

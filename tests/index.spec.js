@@ -28,7 +28,7 @@ var options7 = {
 	'url':'http://testtesttest4564568.com'
 };
 
-//empty value 
+//empty value
 var optionsEmpty = {
 	'url':''
 };
@@ -67,6 +67,14 @@ var optionsNoUrl = { };
 
 describe('GET OG', function (done) {
 	this.timeout(3000); //shoudl wait atleast 3secs before failing
+	it('Page with no og tags get title tag in ogTitle', function(done) {
+		app({'url': 'http://inessential.com/2016/01/04/sound_off_round_1_alterconf'}, function(err, result){
+			expect(err).to.be(null);
+			expect(result.success).to.be(true);
+			expect(result.data.ogTitle).to.be("inessential: Sound Off Round 1 - AlterConf");
+			done();
+		});
+	});
 	it('Valid call og - url1', function(done) {
 		app(options1, function(err, result){
 			expect(err).to.be(null);
