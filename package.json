@@ -1,5 +1,5 @@
 {
-	"name": "open-graph-scraper-frankilo",
+	"name": "open-graph-scraper",
 	"description": "Node.js scraper service for Open Graph info",
 	"version": "1.0.1",
 	"license": "MIT",

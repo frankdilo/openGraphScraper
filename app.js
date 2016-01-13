@@ -249,6 +249,8 @@ exports.getOG = function(options, callback) {
 				ogObject['ogTitle'] = $('head>title').text();
 			}
 
+			ogObject['requestURL'] = response.request.uri.href;
+
 			/* Combine image/width/height/type
 				and sort for priority */
 			var ogImages = _.zip(ogObject.ogImage,

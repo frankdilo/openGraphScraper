@@ -75,6 +75,14 @@ describe('GET OG', function (done) {
 			done();
 		});
 	});
+	it('techcrunch', function(done) {
+		app({'url': 'http://tcrn.ch/1RLaGxM'}, function(err, result){
+			expect(err).to.be(null);
+			expect(result.success).to.be(true);
+			expect(result.data.requestURL).to.be("http://techcrunch.com/2016/01/12/didi-kuaidi-api/");
+			done();
+		});
+	});
 	it('Valid call og - url1', function(done) {
 		app(options1, function(err, result){
 			expect(err).to.be(null);
